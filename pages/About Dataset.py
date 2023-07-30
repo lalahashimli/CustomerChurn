@@ -37,7 +37,7 @@ with interface:
     
     st.markdown('***')
     
-    st.title('Churn distribution')
+    st.subheader('Churn distribution')
     
     fig = go.Figure()
 
@@ -54,7 +54,7 @@ with interface:
     
     st.markdown('***')
     
-    st.title('Distributions by Churn')
+    st.subheader('Distributions by Churn')
     
     selected_column = st.selectbox("Select a feature", [col for col in df.columns if col not in               ['customerID','MonthlyCharges','TotalCharges','Churn']])
     
@@ -68,7 +68,7 @@ with interface:
     fig.update_traces(marker_line=dict(color='#000', width=2), textfont_size=16)
 
     fig.update_layout(title=f'<b>{selected_column} Distribution by Churn</b>', xaxis_title=selected_column, yaxis_title='Count',
-                      barmode='group', showlegend=True, height=500, width=900,title_font = dict(size = 24))
+                      barmode='group', showlegend=True, height=400, width=700,title_font = dict(size = 24))
 
     # Show the plot in Streamlit app using st.plotly_chart
     st.plotly_chart(fig)
