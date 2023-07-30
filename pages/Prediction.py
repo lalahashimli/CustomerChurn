@@ -24,7 +24,7 @@ with interface:
 
 
     # Remove columns for multicollinearity
-    df.drop(columns=['Tenure', 'TotalCharges'],axis = 1, inplace=True)
+    # df.drop(columns=['Tenure', 'TotalCharges'],axis = 1, inplace=True)
 
     # Preprocess categorical columns in the DataFrame
     yes_no_columns = ['SeniorCitizen', 'Partner', 'Dependents', 'PhoneService', 'PaperlessBilling', 'Churn', 'MultipleLines',
