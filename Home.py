@@ -31,7 +31,7 @@ with interface:
 
     st.markdown('***')
 
-    st.title('Key Insights')
+    st.subheader('Key Insights')
 
 
     st.success("- Gender has no effect on Churn Rate")
