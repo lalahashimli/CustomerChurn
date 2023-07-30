@@ -33,7 +33,7 @@ with interface:
     fig.update_traces(marker_line_width=1, marker_line_color='black')
 
     # Setting the layout
-    fig.update_layout(width=800, height=500,title_font = dict(size = 24))
+    fig.update_layout(width=700, height=500,title_font = dict(size = 24))
 
     # Display the plot in Streamlit
     st.plotly_chart(fig)
@@ -68,7 +68,7 @@ with interface:
     # Calculate the percentage of each value in the selected column
         value = df_filtered[selected_column].value_counts(normalize=True) * 100
 
-        fig = px.bar(x=value.index, y=value.values,text=value.values.round(2),color=value.index, height=550, width=500,color_discrete_sequence=['LightCoral','springgreen','lightblue','gold'])
+        fig = px.bar(x=value.index, y=value.values,text=value.values.round(2),color=value.index, height=500, width=450,color_discrete_sequence=['LightCoral','springgreen','lightblue','gold'])
         
         fig.update_layout(xaxis_title=selected_column, yaxis_title='Percentage',title=f'Bar Plot of {selected_column} for {plot_values}',font = dict(size = 25),title_font = dict(size = 24))
         
@@ -82,7 +82,7 @@ with interface:
         
         fig.update_traces(marker_line_width=2, marker_line_color='black')
         
-        fig.update_layout(width=600, height=500,title_font = dict(size = 24),font = dict(size = 25))
+        fig.update_layout(width=500, height=400,title_font = dict(size = 24),font = dict(size = 25))
         st.plotly_chart(fig)
 
 
