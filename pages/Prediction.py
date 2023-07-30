@@ -3,7 +3,6 @@ import warnings
 import pickle
 import time
 import streamlit as st
-from xgboost import XGBClassifier
 import plotly.graph_objects as go
 import PIL
 from PIL import Image
