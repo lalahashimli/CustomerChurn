@@ -2,7 +2,7 @@ import pandas as pd
 import warnings
 import pickle
 import time
-import scikit-learn
+import sklearn
 import xgboost
 import streamlit as st
 from xgboost import XGBClassifier
