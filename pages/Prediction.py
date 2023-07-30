@@ -162,12 +162,15 @@ with interface:
     
     st.subheader('Model Prediction')
     
-# Load the model
 
-with open('clf_model.pickle', 'rb') as pickled_model:
-    xgb_pipe = pickle.load(pickled_model)
 
     if st.button('Predict'):
+        
+        # Load the model
+
+        with open('clf_model.pickle', 'rb') as pickled_model:
+            xgb_pipe = pickle.load(pickled_model)
+            
         churn_probability = xgb_pipe.predict_proba(input_features)[0, 1]
 
         with st.spinner('Sending input features to model...'):
