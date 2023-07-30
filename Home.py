@@ -23,7 +23,7 @@ with interface:
     # Create the Streamlit app
     st.title('Telco Customer Churn')
 
-    st.image(churn_image, width= 400,use_column_width = True)
+    st.image(churn_image, width= 300,use_column_width = True)
 
     st.subheader('Project Description')
 
