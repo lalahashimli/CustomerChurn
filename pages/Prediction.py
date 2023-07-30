@@ -1,4 +1,3 @@
-import streamlit as st
 import pandas as pd
 import warnings
 import pickle
@@ -6,6 +5,7 @@ import time
 import scikit-learn
 import xgboost
 import streamlit as st
+from xgboost import XGBClassifier
 import plotly.graph_objects as go
 import PIL
 from PIL import Image
