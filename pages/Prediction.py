@@ -8,6 +8,8 @@ import PIL
 from PIL import Image
 
 df = pd.read_csv('telco-customer-churn.csv')
+
+df.drop('customerID',axis = 1, inplace = True)
     
 interface = st.container()
 
