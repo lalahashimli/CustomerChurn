@@ -4,6 +4,7 @@ import warnings
 import pickle
 import time
 import sklearn
+import xgboost
 import streamlit as st
 import plotly.graph_objects as go
 import PIL
