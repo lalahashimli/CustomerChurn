@@ -33,7 +33,7 @@ with interface:
     fig.update_traces(marker_line_width=1, marker_line_color='black')
 
     # Setting the layout
-    fig.update_layout(width=700, height=500,title_font = dict(size = 24))
+    fig.update_layout(width=600, height=500,title_font = dict(size = 24))
 
     # Display the plot in Streamlit
     st.plotly_chart(fig)
