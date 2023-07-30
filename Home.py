@@ -25,7 +25,7 @@ with interface:
 
     st.image(churn_image, width= 500,use_column_width = True)
 
-    st.header('Project Description')
+    st.subheader('Project Description')
 
     st.markdown("<p style='font-size: 20px;'>This is a machine learning project and the goal is to develop a customer churn prediction model for a telecommunications company. We aim to identify factors that contribute to churn and build a predictive model to forecast which customers are likely to churn in the near future.</p>",unsafe_allow_html = True)
 
