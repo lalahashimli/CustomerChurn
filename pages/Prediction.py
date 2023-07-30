@@ -37,12 +37,7 @@ with interface:
     df['Contract'] = df['Contract'].replace(contract_encoding)
     df['PaymentMethod'] = df['PaymentMethod'].replace(payment_method_encoding)
 
-# Load the model
 
-with open('clf_model.pickle', 'rb') as pickled_model:
-    xgb_pipe = pickle.load(pickled_model)
-    
-    
     st.title('Enter details')
     st.subheader('Input Features')
 
@@ -68,7 +63,6 @@ with open('clf_model.pickle', 'rb') as pickled_model:
     st.markdown(body = '***')
 
 
-
     phone_service, multiplelines, online_security,online_backup = st.columns(spec = [1,1,1,1])
 
     with phone_service:
@@ -89,7 +83,6 @@ with open('clf_model.pickle', 'rb') as pickled_model:
 
 
     st.markdown(body = '***')
-
 
 
     device_protection, tech_support, streaming_tv,streaming_movies,paperless_billing = st.columns(spec = [1,1,1,1,1])
@@ -117,9 +110,6 @@ with open('clf_model.pickle', 'rb') as pickled_model:
 
     st.markdown(body = '***')
 
-  
-
-
     internet_service = st.selectbox('Internet Service', ['DSL', 'Fiber optic', 'None'])
     contract = st.selectbox('Contract', ['Month-to-month', 'One year', 'Two year'])
     payment_method = st.selectbox('Payment Method', ['Electronic check', 'Mailed check',
@@ -127,7 +117,8 @@ with open('clf_model.pickle', 'rb') as pickled_model:
     monthly_charges = st.slider('Monthly Charges', min_value=float(df.MonthlyCharges.min()),
                                     max_value=float(df.MonthlyCharges.max()), value=float(df.MonthlyCharges.mean()))
 
-        # Convert categorical inputs to numerical using the encoding dictionaries
+    # Convert categorical inputs to numerical using the encoding dictionaries
+    
     gender = gender_encoding[gender]
     senior_citizen = yes_no_encoding[senior_citizen]
     partner = yes_no_encoding[partner]
@@ -165,6 +156,10 @@ with open('clf_model.pickle', 'rb') as pickled_model:
         'PaymentMethod': [payment_method],
         'MonthlyCharges': [monthly_charges]
     })
+# Load the model
+
+with open('clf_model.pickle', 'rb') as pickled_model:
+    xgb_pipe = pickle.load(pickled_model)
     
     st.markdown('***')
     
