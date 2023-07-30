@@ -11,7 +11,7 @@ df = pd.read_csv('telco-customer-churn.csv')
 
 
 # Load the model
-with open('streamlit/clf_model.pickle', 'rb') as pickled_model:
+with open('clf_model.pickle', 'rb') as pickled_model:
     xgb_pipe = pickle.load(pickled_model)
 
     
