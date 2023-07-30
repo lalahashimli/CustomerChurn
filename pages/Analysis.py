@@ -14,7 +14,7 @@ from PIL import Image
 warnings.filterwarnings(action='ignore')
 
 
-df = pd.read_csv('../telco-customer-churn.csv')
+df = pd.read_csv('telco-customer-churn.csv')
 
 df.drop('customerID',axis = 1,inplace = True)
 
