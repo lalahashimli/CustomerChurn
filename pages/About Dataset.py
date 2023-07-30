@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import PIL
 from PIL import Image
 
-df = pd.read_csv('../telco-customer-churn.csv')
+df = pd.read_csv('telco-customer-churn.csv')
 
 
 interface = st.container()
