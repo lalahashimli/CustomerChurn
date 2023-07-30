@@ -47,7 +47,7 @@ with interface:
     fig.update_traces(hoverinfo="label+percent", textfont_size=16)
 
     # Update the layout of the plot
-    fig.update_layout(height=550)
+    fig.update_layout(height=450)
 
     # Show the plot in Streamlit app using st.plotly_chart
     st.plotly_chart(fig)
