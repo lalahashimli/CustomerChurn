@@ -8,12 +8,6 @@ import PIL
 from PIL import Image
 
 df = pd.read_csv('telco-customer-churn.csv')
-
-
-# Load the model
-with open('clf_model.pickle', 'rb') as pickled_model:
-    xgb_pipe = pickle.load(pickled_model)
-
     
 interface = st.container()
 
@@ -41,6 +35,12 @@ with interface:
     df['Contract'] = df['Contract'].replace(contract_encoding)
     df['PaymentMethod'] = df['PaymentMethod'].replace(payment_method_encoding)
 
+# Load the model
+
+with open('clf_model.pickle', 'rb') as pickled_model:
+    xgb_pipe = pickle.load(pickled_model)
+    
+    
     st.title('Enter details')
     st.subheader('Input Features')
 
