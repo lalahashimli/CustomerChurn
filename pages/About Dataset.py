@@ -9,16 +9,13 @@ from PIL import Image
 
 df = pd.read_csv('telco-customer-churn.csv')
 
-
 interface = st.container()
 
 with interface:
 
-
     st.title('About Dataset')
 
     st.subheader('The dataset includes information about:')
-
 
     st.markdown("<p style='font-size: 20px;'>1. Customers who left within the last month – Churn column (Target).</p>",unsafe_allow_html=True)
     st.markdown("<p style='font-size: 20px;'>2. Services that each customer has signed up for – phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and movies.</p>",unsafe_allow_html=True)
@@ -33,7 +30,6 @@ with interface:
     if show_data:
         st.write(df)
 
-    
     st.markdown('***')
     
     st.subheader('Churn distribution')
@@ -73,8 +69,3 @@ with interface:
     st.plotly_chart(fig)
 
     
-    
-
-
-
-
