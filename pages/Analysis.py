@@ -12,7 +12,6 @@ from PIL import Image
 
 warnings.filterwarnings(action='ignore')
 
-
 df = pd.read_csv('telco-customer-churn.csv')
 
 df.drop('customerID',axis = 1,inplace = True)
@@ -83,11 +82,4 @@ with interface:
         
         fig.update_layout(width=500, height=400,title_font = dict(size = 24),font = dict(size = 25))
         st.plotly_chart(fig)
-
-
-
-
-    
-    
-    
 
