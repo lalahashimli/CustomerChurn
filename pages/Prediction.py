@@ -175,10 +175,9 @@ with interface:
         time.sleep(1)
         st.markdown(f'Churn probability is ***{churn_probability:.0%}***')
 
-        if churn_probability > 50:
-            st.markdown('Churn : Yes')
-        else:
-            st.markdown('Churn : No')
+        churn_label = "Yes" if churn_probability > 0.5 else "No"
+        
+        st.markdown(f'Churn prediction is ***{churn_label}***')
 
 
 
