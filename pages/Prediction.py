@@ -6,8 +6,6 @@ import streamlit as st
 import plotly.graph_objects as go
 import PIL
 from PIL import Image
-import sklearn
-from sklearn.pipeline import Pipeline
 
 
 df = pd.read_csv('telco-customer-churn.csv')
