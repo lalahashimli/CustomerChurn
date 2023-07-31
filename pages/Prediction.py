@@ -11,6 +11,11 @@ from PIL import Image
 df = pd.read_csv('telco-customer-churn.csv')
 
 df.drop('customerID',axis = 1, inplace = True)
+
+ # Load the model
+
+with open('clf_model.pickle', 'rb') as pickled_model:
+    xgb_pipe = pickle.load(pickled_model)
     
 interface = st.container()
 
@@ -22,10 +27,6 @@ with interface:
     internet_service_encoding = {'DSL': 2, 'Fiber optic': 1, 'None': 0}
     contract_encoding = {'Month-to-month': 0, 'One year': 1, 'Two year': 2}
     payment_method_encoding = {'Electronic check': 0, 'Mailed check': 1, 'Bank transfer (automatic)': 2, 'Credit card (automatic)': 3}
-
-
-    # Remove columns for multicollinearity
-    # df.drop(columns=['Tenure', 'TotalCharges'],axis = 1, inplace=True)
 
     # Preprocess categorical columns in the DataFrame
     yes_no_columns = ['SeniorCitizen', 'Partner', 'Dependents', 'PhoneService', 'PaperlessBilling', 'Churn', 'MultipleLines',
@@ -167,10 +168,6 @@ with interface:
 
     if st.button('Predict'):
         
-        # Load the model
-
-        with open('clf_model.pickle', 'rb') as pickled_model:
-            xgb_pipe = pickle.load(pickled_model)
             
         churn_probability = xgb_pipe.predict_proba(input_features)[0, 1]
 
