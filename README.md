@@ -1,4 +1,4 @@
-# customerChurn
+# Telecommunication Customer Churn
 
 ## Project Description
 This is a machine learning project and the goal is to develop a customer churn prediction model for a telecommunications company. We aim to identify factors that contribute to churn and build a predictive model to forecast which customers are likely to churn in the near future.
