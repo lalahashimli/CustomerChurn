@@ -12,7 +12,7 @@ df = pd.read_csv('telco-customer-churn.csv')
 
 df.drop('customerID',axis = 1, inplace = True)
 
- # Load the model
+# Load the model
 
 with open('clf_model.pickle', 'rb') as pickled_model:
     xgb_pipe = pickle.load(pickled_model)
@@ -163,11 +163,8 @@ with interface:
     st.markdown('***')
     
     st.subheader('Model Prediction')
-    
-
 
     if st.button('Predict'):
-        
             
         churn_probability = xgb_pipe.predict_proba(input_features)[0, 1]
 
