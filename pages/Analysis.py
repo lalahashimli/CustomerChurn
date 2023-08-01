@@ -66,7 +66,7 @@ with interface:
     # Calculate the percentage of each value in the selected column
         value = df_filtered[selected_column].value_counts(normalize=True) * 100
 
-        fig = px.bar(x=value.index, y=value.values,text=value.values.round(2),color=value.index, height=400, width=350,color_discrete_sequence=['LightCoral','springgreen','lightblue','gold'])
+        fig = px.bar(x=value.index, y=value.values,text=value.values.round(2),color=value.index, height=400, width=450,color_discrete_sequence=['LightCoral','springgreen','lightblue','gold'])
         
         fig.update_layout(xaxis_title=selected_column, yaxis_title='Percentage',title=f'Bar Plot of {selected_column} for {plot_values}',font = dict(size = 25),title_font = dict(size = 24))
         
